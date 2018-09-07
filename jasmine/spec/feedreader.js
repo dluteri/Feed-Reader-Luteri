@@ -27,7 +27,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-
+// From Udacity Starter Code:
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -45,9 +45,7 @@ $(function() {
          for(let feed of allFeeds) {
            expect(feed.url).toBeDefined();
            expect(feed.url.length).not.toBeNull();
-           //
-           //expect(feed.url.length).not.toBe(0); MC
-        }
+         }
        });
 
 
@@ -66,7 +64,7 @@ $(function() {
           }
          });
 
-    });
+});  // closes describe('RSS Feeds', function()
 
 
     /* Write a new test suite named "The menu" */
@@ -114,7 +112,7 @@ describe('Initial Entries', function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         beforeEach(function(done) {
+         beforeEach(function(done) {  // In the beforeEach function, we call loadFeed() for the first index, 0. (Courtesy of Matthew Cranford Walkthrough)
            loadFeed(0, done);
          });
 
@@ -135,12 +133,12 @@ describe('New Feed Selection', function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-         beforeEach(function(done) {
+         beforeEach(function(done) {  //  (Courtesy of Matthew Cranford Walkthrough)
            loadFeed(0);
            Array.from(feed.children).forEach(function(entry) {
-             firstFeed.push(entry.textContent );
+             firstFeed.push(entry.textContent);
            });
-           console.log(feed.children[0].textContent );
+           console.log(feed.children[0].textContent);
            loadFeed(1, done);
          });
 
@@ -149,12 +147,8 @@ describe('New Feed Selection', function() {
              console.log(entry.textContent , firstFeed[index], entry.textContent  === firstFeed[index]);
              expect(entry.textContent  === firstFeed[index]).toBe(false);
            });
-
          });
-
-
 
 }); // closes describe('New Feed Selection', function() {
 
-
-}());
+}()); // closes $(function()
