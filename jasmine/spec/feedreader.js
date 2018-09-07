@@ -76,7 +76,11 @@ $(function() {
 
 describe('The Menu', function() {
 
+<<<<<<< HEAD
         /* Write a test that ensures the
+=======
+        /* TODO: Write a test that ensures the
+>>>>>>> 4e0a48debb7b3af4d3e2abab16338a92535b0222
         menu element is hidden by default.
          You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
