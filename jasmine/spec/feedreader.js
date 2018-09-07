@@ -1,3 +1,7 @@
+//Globals
+const body = document.querySelector('body');
+const menu = document.querySelector('.menu-icon-link');
+
 /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
@@ -68,19 +72,39 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* Write a new test suite named "The menu" */
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
+describe('The Menu', function() {
+
+        /* Write a test that ensures the
+        menu element is hidden by default.
+         You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
 
-         /* TODO: Write a test that ensures the menu changes
+         it('Is menu hidden? DNL', function() {
+             expect(body.classList.contains('menu-hidden')).toBe(true);
+         });
+
+
+         /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          it('Does menu toggle? DNL', function() {
+            menu.click();
+              expect(body.classList.contains('menu-hidden')).toBe(false);  // menu open
+            menu.click();
+              expect(body.classList.contains('menu-hidden')).toBe(true);  // menu closed
+          });
+
+
+
+}); // closes describe('The Menu', function() {
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
