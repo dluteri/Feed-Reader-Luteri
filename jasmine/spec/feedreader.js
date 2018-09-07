@@ -107,11 +107,11 @@ describe('The Menu', function() {
 }); // closes describe('The Menu', function() {
 
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    /* Write a new test suite named "Initial Entries" */
 
 describe('Initial Entries', function() {
 
-        /* TODO: Write a test that ensures when the loadFeed
+        /* Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
@@ -132,8 +132,17 @@ describe('Initial Entries', function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
+describe('New Feed Selection', function() {
+
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+
+
+
+}); // closes describe('New Feed Selection', function() {
+
+
 }());
