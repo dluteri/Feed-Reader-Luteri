@@ -2,6 +2,7 @@
 const body = document.querySelector('body');
 const menu = document.querySelector('.menu-icon-link');
 const feed = document.querySelector('.feed');
+const firstFeed = [];
 
 /* feedreader.js
  *
@@ -130,15 +131,31 @@ describe('Initial Entries', function() {
 
 }); // closes describe('Initial Entries', function() {
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* Write a new test suite named "New Feed Selection" */
 
 describe('New Feed Selection', function() {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
 
+         beforeEach(function(done) {
+           loadFeed(0);
+           Array.from(feed.children).forEach(function(entry) {
+             firstFeed.push(entry.innerText);
+           })
+           console.log(feed.children[0].innerText);
+           loadFeed(1, done);
+         });
+
+         it('Does feed content change?', function() {
+           Array.from(feed.children).forEach(function(entry,index) {
+             console.log(entry.innerText, firstFeed[index], entry.innerText === firstFeed[index]);
+             expect(entry.innerText === firstFeed[index]).toBe(false);
+           });
+
+         });
 
 
 
