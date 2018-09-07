@@ -26,11 +26,6 @@ $(function() {
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
          * page?
-              // copy of example:
-         it('are defined', function() {
-             expect(allFeeds).toBeDefined();
-             expect(allFeeds.length).not.toBe(0);
-         });
          */
 
         it('are defined', function() {
@@ -46,7 +41,7 @@ $(function() {
          URL is not empty.
          */
 
-       it('defined URL DNL', function() {
+       it('Is URL defined and not empty?', function() {
          for(let feed of allFeeds) {
            expect(feed.url).toBeDefined();
            expect(feed.url.length).not.toBeNull();
@@ -64,7 +59,7 @@ $(function() {
          */
 
 
-         it('defined name DNL', function() {
+         it('Is name defined and not empty?', function() {
            for(let feed of allFeeds) {
              expect(feed.name).toBeDefined();
              expect(feed.name.length).not.toBeNull();
@@ -85,7 +80,7 @@ describe('The Menu', function() {
          * hiding/showing of the menu element.
          */
 
-         it('Is menu hidden? DNL', function() {
+         it('Is menu hidden?', function() {
              expect(body.classList.contains('menu-hidden')).toBe(true);
          });
 
@@ -96,7 +91,7 @@ describe('The Menu', function() {
           * clicked and does it hide when clicked again.
           */
 
-          it('Does menu toggle? DNL', function() {
+          it('Does menu toggle?', function() {
             menu.click();
               expect(body.classList.contains('menu-hidden')).toBe(false);  // menu open
             menu.click();
