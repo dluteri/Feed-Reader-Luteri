@@ -119,8 +119,8 @@ describe('Initial Entries', function() {
          });
 
          it('Is LoadFeed function complete?', function() {
-           expect(feed.children.length > 0).toBe(true);
-      // TODO:     expect(feed.children.length).toBeGreaterThanOrEqualTo(1);
+          // expect(feed.children.length > 0).toBe(true);
+    expect(feed.children.length).toBeGreaterThanOrEqual(1);
          });
 
 
@@ -138,16 +138,16 @@ describe('New Feed Selection', function() {
          beforeEach(function(done) {
            loadFeed(0);
            Array.from(feed.children).forEach(function(entry) {
-             firstFeed.push(entry.innerText);
-           })
-           console.log(feed.children[0].innerText);
+             firstFeed.push(entry.textContent );
+           });
+           console.log(feed.children[0].textContent );
            loadFeed(1, done);
          });
 
          it('Does feed content change?', function() {
            Array.from(feed.children).forEach(function(entry,index) {
-             console.log(entry.innerText, firstFeed[index], entry.innerText === firstFeed[index]);
-             expect(entry.innerText === firstFeed[index]).toBe(false);
+             console.log(entry.textContent , firstFeed[index], entry.textContent  === firstFeed[index]);
+             expect(entry.textContent  === firstFeed[index]).toBe(false);
            });
 
          });
