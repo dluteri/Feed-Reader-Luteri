@@ -1,6 +1,7 @@
 //Globals
 const body = document.querySelector('body');
 const menu = document.querySelector('.menu-icon-link');
+const feed = document.querySelector('.feed');
 
 /* feedreader.js
  *
@@ -117,7 +118,14 @@ describe('Initial Entries', function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+         beforeEach(function(done) {
+           loadFeed(0, done);
+         });
 
+         it('Is LoadFeed function complete?', function() {
+           expect(feed.children.length > 0).toBe(true);
+      // TODO:     expect(feed.children.length).toBeGreaterThanOrEqualTo(1);
+         });
 
 
 }); // closes describe('Initial Entries', function() {
