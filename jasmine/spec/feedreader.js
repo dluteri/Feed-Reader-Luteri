@@ -33,10 +33,10 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        /* Write a test that loops through each feed
          * in the allFeeds object and ensures it
          has a URL defined
-         * and that the
+          * and that the
          URL is not empty.
          */
 
@@ -45,15 +45,26 @@ $(function() {
            expect(feed.url).toBeDefined();
            expect(feed.url.length).not.toBeNull();
            //
-           //expect(feed.url.length).not.toBe(0);
+           //expect(feed.url.length).not.toBe(0); MC
         }
        });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
+        /* Write a test that loops through each feed
+         * in the allFeeds object and ensures it
+         has a name defined
+          * and that the
+         name is not empty.
          */
+
+
+         it('defined name DNL', function() {
+           for(let feed of allFeeds) {
+             expect(feed.name).toBeDefined();
+             expect(feed.name.length).not.toBeNull();
+          }
+         });
+
     });
 
 
