@@ -1,6 +1,7 @@
 Donna's Feed Reader Project
 ===========================
-![](images/jasmine_favicon.png)
+
+![](jasmine/lib/jasmine-3.2.1/jasmine_favicon.png)
 
 Installation
 ============
@@ -18,7 +19,9 @@ Starter code was given from Udacity as part of the project, including:
   IcoMoon - css/icomoon.css
 Jasmine was updated to version 3.2.1 via https://github.com/jasmine/jasmine/releases
 
-##Udacity's Starter Code/ReadMe
+
+Udacity's Starter Code/ReadMe
+=============================
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
