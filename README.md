@@ -18,6 +18,10 @@ Starter code was given from Udacity as part of the project, including:
   IcoMoon - css/icomoon.css
 Jasmine was updated to version 3.2.1 via https://github.com/jasmine/jasmine/releases
 
+Contributing
+============
+A big thank-you to my Cohort - The Super Sloths, especially Jason Michael White, for all the help with the revisions on this project.  You guys are the best!
+
 ##Udacity's Starter Code/ReadMe
 # Project Overview
 
