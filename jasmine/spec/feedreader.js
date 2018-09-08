@@ -3,7 +3,8 @@ const body = document.querySelector('body');
 const menu = document.querySelector('.menu-icon-link');
 const feed = document.querySelector('.feed');
 const entry = document.querySelector('.entry');
-//const entryFeed = document.querySelectorAll('.entry .feed');
+const feedly = document.querySelectorAll('.feed .entry');
+const feedAndChild = document.querySelectorAll('.feed .entry');
 const firstFeed = [];
 const feedOne = [];
 const feedTwo = [];
@@ -122,7 +123,7 @@ describe('Initial Entries', function() {
          });
 
          it('Is LoadFeed function complete?', function() {
-           expect(feed.children.length).toBeGreaterThanOrEqual(1)&&expect(entry.children.length).toBeGreaterThanOrEqual(1);  // change per review #1
+           expect(feedAndChild.length).toBeGreaterThan(0); // change per review #1
         //  expect(feed.children.length).toBeGreaterThanOrEqual(1);
          });
 
