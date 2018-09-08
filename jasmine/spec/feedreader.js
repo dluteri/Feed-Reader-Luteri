@@ -2,12 +2,17 @@
 const body = document.querySelector('body');
 const menu = document.querySelector('.menu-icon-link');
 const feed = document.querySelector('.feed');
+const entry = document.querySelector('.entry');
+//const entryFeed = document.querySelectorAll('.entry .feed');
 const firstFeed = [];
+const feedOne = [];
+const feedTwo = [];
+
 
 /* feedreader.js
  *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
+ * This is the spec file for Jasmine to read and contains
+ * all of the tests ran against the application.
  */
 
 /* We're placing all of our tests within the $() function,
@@ -117,8 +122,8 @@ describe('Initial Entries', function() {
          });
 
          it('Is LoadFeed function complete?', function() {
-          // expect(feed.children.length > 0).toBe(true);
-    expect(feed.children.length).toBeGreaterThanOrEqual(1);
+           expect(feed.children.length).toBeGreaterThanOrEqual(1)&&expect(entry.children.length).toBeGreaterThanOrEqual(1);  // change per review #1
+        //  expect(feed.children.length).toBeGreaterThanOrEqual(1);
          });
 
 
@@ -133,14 +138,48 @@ describe('New Feed Selection', function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-         beforeEach(function(done) {  //  (Courtesy of Matthew Cranford Walkthrough)
+        /* beforeEach(function(done) {  //  (Courtesy of Matthew Cranford Walkthrough)
            loadFeed(0);
            Array.from(feed.children).forEach(function(entry) {
              firstFeed.push(entry.textContent);
            });
            console.log(feed.children[0].textContent);
            loadFeed(1, done);
-         });
+         });*/
+
+      /*   beforeEach(function(done) {  // Per review #1 suggestion
+           loadFeed(0, function() {  // feed 0 done loading
+           prevUrl = ...
+
+          loadFeed(1, function(){  // feed 1 done loading
+          newUrl = ...// all variables initialized, can begin tests
+
+          done();
+          });
+          });
+          }); */
+
+  // Changes per review #1 - A huge thank you to Jason Michael White for the help with this!!!
+  // Establishes DOM elements and empty arrays for later testing. -
+
+// As per spec, `done` is passed as an argument to the `beforeEach` function
+beforeEach(function(done) {
+    //loads the first feed and executes a function to push each article to `feedOne` array
+    loadFeed(0, function() {
+        Array.from(feed.children).forEach(function(feed) {
+            // console.log(feed);
+            feedOne.push(feed.innerText);
+            // loads the second feed and executes a function to push each article to the `feedTwo` array
+            loadFeed(1, function() {
+                Array.from(feed.children).forEach(function(feed) {
+                    feedTwo.push(feed.innerText);
+                });
+                // executes `done()` function to cease asynchronous operation and signal that processing has completed
+                done();
+            });
+        });
+    });
+});
 
          it('Does feed content change?', function() {
            Array.from(feed.children).forEach(function(entry,index) {
