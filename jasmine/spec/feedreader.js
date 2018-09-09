@@ -136,11 +136,11 @@ beforeEach(function(done) {
     loadFeed(0, function() {
         Array.from(feed.children).forEach(function(feed) {
             // console.log(feed);
-            feedOne.push(feed.innerText);
+            feedOne.push(feed.innerHTML);  // Revised per review #2.
             // loads the second feed and executes a function to push each article to the `feedTwo` array
             loadFeed(1, function() {
                 Array.from(feed.children).forEach(function(feed) {
-                    feedTwo.push(feed.innerText);
+                    feedTwo.push(feed.innerHTML);  // Revised per review #2.
                 });
                 // executes `done()` function to cease asynchronous operation and signal that processing has completed
                 done();
@@ -150,12 +150,9 @@ beforeEach(function(done) {
 });
 
          it('Does feed content change?', function() {
-
-
-
            Array.from(feed.children).forEach(function(entry,index) {
-
              console.log(entry.textContent , firstFeed[index], entry.textContent  === firstFeed[index]);
+
              expect(entry.textContent  === firstFeed[index]).toBe(false);
            });
          });
